@@ -3,6 +3,7 @@
 #sendsms script by speeduploop
 
 
+source readcsv.sh
 
 
 HORIZONTALLINE="================================="
@@ -46,10 +47,16 @@ case $choice in
     ;;
 
   2)
-    read -e -p "Number: " number
+    
+    #read -e -p "Number: " number
+    select_number
+    echo $receive_number
+
+    echo $HORIZONTALLINE
+
     read -p "Text: " text
     mask_whitespace=${text// /"\ "}
-    adb shell sendsms $number $mask_whitespace
+    adb shell sendsms $receive_number $mask_whitespace
     exec bash
     ;;
 

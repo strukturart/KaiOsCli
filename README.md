@@ -9,6 +9,7 @@ KaiOs CLI to execute adb shell commands faster and send sms
 
 ### Installation
 + copy sendsms to your phone adb push sendsms /system/bin/
++ create adressbook.csv, just like in the example file
 + make KaiOsCli.sh executable
 
 
