@@ -11,7 +11,13 @@ KaiOs CLI to execute adb shell commands faster and send sms
 + copy sendsms to your phone adb push sendsms /system/bin/
 + create adressbook.csv, just like in the example file
 + make KaiOsCli.sh executable
++ Your Phone must be in Debug-Mode
++ Your phone must be rooted
++ set the backup path in kaiOsCli.sh
 
+### Dependencies
+ADB-Shell
+adb-sync
 
 ### Thank you
 + [Bananna Hackers Group](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/bananahackers)

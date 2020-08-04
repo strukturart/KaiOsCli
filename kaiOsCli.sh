@@ -2,6 +2,14 @@
 #Author: perry
 #sendsms script by speeduploop
 
+#CONFIG
+#########################
+##SD-Backup path
+sd_backup_path=""
+
+
+#########################
+
 
 source readcsv.sh
 
@@ -33,7 +41,8 @@ echo $HORIZONTALLINE
 echo "1) reboot device"
 echo "2) send sms"
 echo "3) backup sms"
-echo "4) exit"
+echo "4) backup sd-card"
+echo "5) exit"
 
 echo $HORIZONTALLINE
 
@@ -65,8 +74,17 @@ case $choice in
     adb pull /data/local/storage/permanent/chrome/idb/226660312ssm.sqlite
 
     ;;
-
   4)
+    if [ -z $sd_backup_path ]
+    then
+    echo  -e "\e[31mdesination path not set\e[0m"
+    else
+    adb-sync/adb-sync --reverse --times --delete /sdcard/ "$sd_backup_path"
+    echo "done"
+    fi
+    ;;
+
+  5)
   exec bash
 
   ;;
