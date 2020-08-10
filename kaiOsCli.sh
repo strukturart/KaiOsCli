@@ -66,7 +66,8 @@ case $choice in
     read -p "Text: " text
     mask_whitespace=${text// /"\ "}
     adb shell sendsms $receive_number $mask_whitespace
-    exec bash
+    source kaiOsCli.sh
+
     ;;
 
   3)
@@ -80,7 +81,7 @@ case $choice in
     echo  -e "\e[31mdesination path not set\e[0m"
     else
     adb-sync/adb-sync --reverse --times --delete /sdcard/ "$sd_backup_path"
-    echo "done"
+    source kaiOsCli.sh
     fi
     ;;
 
