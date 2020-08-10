@@ -4,7 +4,7 @@ KaiOs CLI to execute adb shell commands faster and send sms
 + backup sms db
 + send sms from command line
 
-![image-2](/images/image-1.png)
+<img src="/images/image-1.png" width="300px"> <img src="/images/n8110.png" width="200px">
 
 
 ### Installation

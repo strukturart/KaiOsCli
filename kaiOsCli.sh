@@ -65,7 +65,7 @@ case $choice in
 
     read -p "Text: " text
     mask_whitespace=${text// /"\ "}
-    adb shell sendsms $receive_number $mask_whitespace
+    adb shell sendsms $receive_number "$mask_whitespace"
     source kaiOsCli.sh
 
     ;;
