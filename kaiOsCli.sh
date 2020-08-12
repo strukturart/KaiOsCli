@@ -5,7 +5,7 @@
 #CONFIG
 #########################
 ##SD-Backup path
-sd_backup_path=""
+sd_backup_path="sdcard"
 
 
 #########################
@@ -42,7 +42,8 @@ echo "1) reboot device"
 echo "2) send sms"
 echo "3) backup sms"
 echo "4) backup sd-card"
-echo "5) exit"
+echo "5) backup user data"
+echo "6) exit"
 
 echo $HORIZONTALLINE
 
@@ -86,6 +87,15 @@ case $choice in
     ;;
 
   5)
+  mkdir local && cd ./local && 
+  adb pull /data/local/webapps && 
+  adb pull /data/local/permissions.sqlite && 
+  adb pull /data/local/storage && 
+  adb pull /data/local/config 
+  source kaiOsCli.sh
+
+  ;;
+  6)
   exec bash
 
   ;;
