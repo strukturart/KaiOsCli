@@ -43,7 +43,11 @@ echo "2) send sms"
 echo "3) backup sms"
 echo "4) backup sd-card"
 echo "5) backup user data"
-echo "6) exit"
+echo "6) screenshot"
+echo "7) adb forward"
+echo "8) open palemoon"
+echo "9) exit"
+
 
 echo $HORIZONTALLINE
 
@@ -74,6 +78,8 @@ case $choice in
   3)
 
     adb pull /data/local/storage/permanent/chrome/idb/226660312ssm.sqlite
+    source kaiOsCli.sh
+
 
     ;;
   4)
@@ -95,7 +101,30 @@ case $choice in
   source kaiOsCli.sh
 
   ;;
+
   6)
+  adb forward tcp:6000 localfilesystem:/data/local/debugger-socket
+  python3 kaiscr.py --count 10
+  ;;
+
+  7)
+  adb forward tcp:6000 localfilesystem:/data/local/debugger-socket
+  echo "done"
+  sleep 2
+  source kaiOsCli.sh
+
+  ;;
+
+  8)
+  echo "hello"
+  sleep 4
+  cd palemoon && ./palemoon
+  source kaiOsCli.sh
+
+  ;;
+  
+
+  9)
   exec bash
 
   ;;

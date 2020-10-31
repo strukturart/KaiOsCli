@@ -1,0 +1,11 @@
+Performing a replace request
+PATCH DIRECTORY /home/strukturart/Schreibtisch/MyData/MyData/software/palemoon/updates/0
+INSTALLATION DIRECTORY /home/strukturart/Schreibtisch/MyData/MyData/software/palemoon
+WORKING DIRECTORY /home/strukturart/Schreibtisch/MyData/MyData/software/palemoon/updated
+Begin moving destDir (/home/strukturart/Schreibtisch/MyData/MyData/software/palemoon) to tmpDir (/home/strukturart/Schreibtisch/MyData/MyData/software/palemoon.bak)
+rename_file: proceeding to rename the directory
+Begin moving newDir (/home/strukturart/Schreibtisch/MyData/MyData/software/palemoon.bak/updated) to destDir (/home/strukturart/Schreibtisch/MyData/MyData/software/palemoon)
+rename_file: proceeding to rename the directory
+Now, remove the tmpDir
+succeeded
+calling QuitProgressUI
