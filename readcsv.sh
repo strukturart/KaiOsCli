@@ -6,7 +6,7 @@ HORIZONTALLINE="================================="
 select_number () {
 
 
-declare -A data_arr
+declare -a data_arr
 declare -a data_arr_index
 
 IFS=","
